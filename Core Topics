@@ -1,0 +1,76 @@
+What is Inversion of Control and Dependency Injection?
+
+Consider a scenario an Application needs to talk to a coach to get Daily workouts,
+This App should be configurable for all different type of games.
+
+
+Class File 1:
+--------------
+interface Coach {
+public String getDailyWorkout();
+}
+
+Class File 2:
+------------
+Class Baseball() implements Coach{
+
+@Override
+public String getDailyWorkout(){
+return "practice baseball daily for 30 mins";
+}
+
+}
+
+Class File 3:
+------------
+Class Athlete() implements Coach{
+
+@Override
+public String getDailyWorkout(){
+return "run 5k daily";
+}
+
+}
+
+Main class file
+--------------
+
+public class MainClass{
+
+public static void main(String[] args){
+// create the object 
+Coach the_coach  = new Baseball();      :: hardcoded Object Creation
+
+//call the method
+System.out.println(the_coach.getDailyWorkout());
+
+}
+
+
+}
+
+
+
+Since our App Should be Configurable , Spring supports Object creation and Manage dependencies by use of Object factory.
+
+MyApp ------give me coach Object--------->  Object Factory
+                                                 ----------------> Configuration file  ------   Cricket 
+                                                                      |         \
+                                                                      |           \
+                                                                      |             \
+                                                                  BaseBall        Hockey 
+                                                                  
+                                                               
+ Spring Container can be configured in 3 different ways
+ 1) XML configuration
+ 2) Java Annotations
+ 3) Java Source code
+ 
+ 
+  
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+
