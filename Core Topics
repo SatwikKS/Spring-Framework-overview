@@ -115,8 +115,54 @@ Inversion of Control:
                    Coach theCoach =  means we are using interface to create a object of required coach type.
                    
                    
-                   
-           
+   What is Dependency Injection?
+   
+   if one service want s to utilize the another Service, then this needs to be injected during the object creation. ex: fortune Service inteface , a class is used in sportcalss.
+   
+   There are 2 types of DI
+   
+   1) Constructor Injection
+   2)Setter Injection
+   
+   Autowiring will take later ... while doing config with Annotations
+   
+   
+   Steps involved:
+   
+   1)Define the dependency interface and class (similar to coach and sportclass)
+   2) create a constructor in Sportclass for injection
+   3)Configure Dependency injection in Config file
+   
+   
+Create a private field , create a constructor & in the config file 
+<constructor-arg  ref="">  only ref is present in const -arg
+
+
+Setter Injection:
+-----------------
+
+1) create a private field on your class and create a setter method for the field
+2) create the beans and configure it in Spring config file using <property> tag
+    <properties name ="" ref =""> //name is coming from setter method , ref ="" value is setter method name;
+    
+    
+Reading Literal Values:
+-------------------------
+
+Create private fields
+create setter method for fields
+create <property name ="" value =""> in the spring configuration file
+
+Reading Property File :
+---------------------------
+<context: property-placeholder location ="classpath:sport.properties">
+create <property name ="" value ="${RCB}">
+
+
+
+
+
+
            
            
    
