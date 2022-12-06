@@ -67,8 +67,62 @@ MyApp ------give me coach Object--------->  Object Factory
  3) Java Source code
  
  
-  
-                                                                    
+primary feature of Spring core Container 
+1) create and manage Objects  (IOC)
+2) Inject Object Dependencies (DI)
+
+
+Inversion of Control:
+
+1) Configure Spring Beans
+2) Create a Spring Container
+3) Retrieve Beans from Spring Container
+
+
+  1) Configuring Spring Beans
+      File : ApplicationContext.xml
+      <beans>
+            <bean id ="" class="">
+            </bean>        
+            
+      </beans>
+
+
+
+    2) creating a Spring Container:  ApplicationContext
+     Spring Container can be created in multiple ways:
+     1) ClassPathXmlApplicationContext
+     2)AnnotationCOnfigApplicationContext
+     3)GenericWebApplicationContext
+     
+     
+     ClassPathApplicationContext context = new ClassPathApplicationContext("ApplicationContext.xml")
+     
+     
+     3) Retrieve beans from container:
+     context.getBean() 
+     
+     
+     
+     ALL 3 steps now:
+     ----------------
+     
+     ClassPathApplicationContext context = new ClassPathApplicationContext("ApplicationContext.xml")
+     Coach the_Coach = context.getBean("mycoach", Coach.class)     // "mycoach" refers to bean id , Coach.class is an interface, BaseballCoach is the implemeted class
+          
+                   <beans>    <bean id ="mycoach" class="fullpackage.baseballcoach"></bean>    </beans>           
+                   context.getbean() method 2nd param should be an interface like Coach in our example
+                   Coach theCoach =  means we are using interface to create a object of required coach type.
+                   
+                   
+                   
+           
+           
+           
+   
+      
+     
+     
                                                                     
                                                                     
                                                                     
