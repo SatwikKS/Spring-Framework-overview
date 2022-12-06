@@ -1,0 +1,83 @@
+Official website : www.spring.io
+
+why spring?
+  : to simplify Enterprise Java Development.
+  
+  Goals: 
+  lightweight development with Java POJOS (plain old java Objects)
+  promote loose coupling by making use of Dependency injection(instead of harwirding the objects together simply specify wiring via configuration file/ Annotations)
+  Declarative Programming with AOP  : ex adding application wide services to some java objects
+  Minimize boilerplate java code
+  
+  
+  Spring Core Container:
+  
+  Beans
+  Core
+  SpEL
+  Context
+  
+  Spring core container contains a BeansFactory for creating Beans and Managing DEpendency Injection
+  SpEl: is a spring expression language which is used in config file to refer one bean to another.
+  Context is the container which holds the beans in memory
+  
+  
+  
+  Spring Infrastructure:
+  
+  AOP
+  Aspects,
+  Instrumentation,
+  Messaging
+  
+  
+  AOP: Aspect oriented programming.helpful in adding functionality to objects declaratively. ex: logging,security, transactions etc.
+  
+  
+  
+  Data Access Layer:
+  
+  JDBC
+  ORM
+  Transactions
+  OXM
+  JMS
+  
+  
+  Web Layer:
+  
+  Servlet
+  WebSocket
+  Web
+  Portlet
+  
+  
+  Test layer:
+  
+  Unit
+  Integeration
+  Mock
+  
+  
+  Additional spring Modules:
+  Spring cloud
+  Spring Data
+  SPring Security
+  Spring WebFlow
+  Spring Web Services
+  Spring LDAP
+  
+  
+  Download Tomcat server:
+  Binary distribution installer : 32/64 bit windows service installer
+  
+  www.luv2code.com/downloadspring
+  libs-release > org > springframework > spring
+  
+  Spring 5 doesn't work on tomcat 10 so install tomcat9 due to jakartaEE9 
+  
+  RQ74796200 
+  
+  
+  
+  
