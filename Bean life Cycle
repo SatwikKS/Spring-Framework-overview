@@ -1,0 +1,39 @@
+By Default Bean scope is Singleton
+
+Scope refers to lifecycle of a Bean
+How long does the bean live?
+How many instances are created?
+How is the bean Shared?
+
+
+Singleton: 
+      Spring by default creates only one instance of the bean
+      It is cached in memory
+      All request for the bean will return a shared reference to the same bean
+      
+      <bean id ="" class="" scope ="" init-method ="" destroy-method =""> 
+     we can explicitly specify the bean scope in configuration file
+     
+     SINGLETON : creates a single shared bean for each container request
+     PROTOTYPE : creates a new bean for each container request
+     REQUEST : Scoped to HTTP web request. only used for web apps
+     SESSION : Scoped to HTTP session. only used for web apps
+     GLOBAL-SESSION : Scoped to global HTTP session. only used for web apps
+     
+     
+     Special Note about init and destroy Method Signatures
+
+When using XML configuration, I want to provide additional details regarding the method signatures of the init-method  and destroy-method .
+
+Access modifier
+The method can have any access modifier (public, protected, private)
+
+Return type
+The method can have any return type. However, "void' is most commonly used. If you give a return type just note that you will not be able to capture the return value. As a result, "void" is commonly used.
+
+Method name
+The method can have any method name.
+
+Arguments
+The method can not accept any arguments. The method should be no-arg.
+     
