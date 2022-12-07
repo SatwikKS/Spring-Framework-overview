@@ -11,3 +11,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 @ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = *.class, responseContainer = "Object") })
+
+
+import org.springframework.web.bind.annotation.ResponseBody;
+@ResponseBody
+
+
+import org.springframework.web.bind.annotation.RequestParam;
+@RequestParam
+
+import org.springframework.web.multipart.MultipartFile;
+MultipartFile
+
+example:
+public @ResponseBody Object handleFileUpload(@RequestParam("dcName") String dcName,@RequestParam("file") MultipartFile file, @RequestParam("userName") String userName) throws Exception {
