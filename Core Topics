@@ -158,6 +158,78 @@ Reading Property File :
 <context: property-placeholder location ="classpath:sport.properties">
 create <property name ="" value ="${RCB}">
 
+use @value("${}") => during property place holder
+
+@propertySource("classpath:filename");
+
+I am running the code for Java Configuration and injecting values from props file. However, I'm getting:
+${foo.email}
+${foo.team}
+
+If you are using Spring 4.2 and lower, you will need to add the code
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer
+                    propertySourcesPlaceHolderConfigurer() {
+        
+        return new PropertySourcesPlaceholderConfigurer();
+    }
+
+
+
+IOC with JAVA ANNOTATIONS:
+--------------------------
+
+In spring configuration file:
+
+ApplicationConfiguration.xml
+
+<context : component-scan base-package="">
+
+this will enable creating objects with Annotations 
+
+@ComponentScan("beanid")  called in context.getbean("beanid", coach.class)
+
+default bean id is the classname with firstletter lowercase
+
+---------------------------------------------------------------
+
+IOC and DI with Java Source code:
+---------------------------------
+
+1) create a java configuration class using @configuration annotation
+2) create the bean objects required in the project in the config class using @Bean annotation
+3) use AnnotationCOnfigApplicationContext as the Spring container
+4) retrieve the bean as before using context.getBean()
+
+
+--------------------------------------------------- ----------
+
+
+@Configuration
+@ComponentScanning("base package")
+public class ApplicationCongigurationclass{
+
+
+
+@Bean
+public Coach footballCOach(){
+return new FootballCoach();
+}
+
+}
+
+
+class MainClass(){
+
+public Static void Main(String[] args){
+
+
+AnnotationConfig ApplicationContext context = new AnnotationconfigApplicationContext(ApplicationCongigurationclass.class);
+
+context.getbean("footballCoach");  // beanID is the bean method name defined with @bean annotation
+}
+}
 
 
 
