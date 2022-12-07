@@ -1,0 +1,13 @@
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+
+import org.springframework.web.bind.annotation.RequestMapping;
+@RequestMapping("")
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+@Autowired
+
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = *.class, responseContainer = "Object") })
