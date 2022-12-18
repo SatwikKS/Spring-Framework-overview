@@ -1,0 +1,62 @@
+Application.yml file :
+------------------------
+
+Spring:
+  datsource:
+    1-dbname:
+      url:
+      username:
+      password:
+      driver-class-name:
+    2-dbname:
+      url:
+      username:
+      password:
+      driver-class-name:
+    3-dbname:
+      url:
+      username:
+      password:
+      driver-class-name:
+      
+      
+      
+      
+      Create a new Class in Configuration package:
+      -----------------------------------------------
+      
+      @Configuration
+      public class ApplicationDbConfiguration{
+      
+     @Primary
+     @Bean(name ="dbOneService")
+     @ConfigurationProperties(prefix ="spring.datasource.1-dbname")
+     public DataSource getFirstDataSource(){
+     return DataSourceBuilder.create().build();     
+     }
+     
+     
+     @Bean(name ="jdbcOneService")
+     @Autowired
+     public JdbcTemplate createJdbcTemplate(@Qualifier() DataSource dbsrc){     
+     return new JdbcTemplate(dbsrc);
+     }
+        
+
+      }
+      
+----------------- --------------------- -------------------- ------------------- ----------------- ----------------------------
+
+create a DBidentification class in util package:
+----------------------------------------------------
+
+@Qualifer("jdbcOneService")
+@Autowired
+JdbcTemplate jdbcTemplate;
+
+
+
+Do the same process for all other DB's in config file and in DBidentification file;
+----------------------------------------
+
+
