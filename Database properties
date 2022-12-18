@@ -1,0 +1,9 @@
+REFERENCE FOR APPLICATION PROPERTIES:
+  https://docs.spring.io/spring-boot/docs/1.4.x/reference/html/common-application-properties.html
+
+
+spring.datasource.url =jdbc:mysql://localhost:port/schema?useSSL=false;
+spring.datasource.username =***;
+spring.datasource.password = ***;
+
+server.port=portnumber;
