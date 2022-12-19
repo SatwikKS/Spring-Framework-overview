@@ -1,6 +1,9 @@
 Create EmailDto Object:
 ------------------------
 
+Add spring boot starter mail dependency;
+
+
 private String emailFrom;
 private String[] receipents;
 private String[] recipientsinCC;
