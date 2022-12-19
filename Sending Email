@@ -3,6 +3,10 @@ Create EmailDto Object:
 
 Add spring boot starter mail dependency;
 
+spring.mail.host:
+            .port:
+            .protocol: smtp
+
 
 private String emailFrom;
 private String[] receipents;
