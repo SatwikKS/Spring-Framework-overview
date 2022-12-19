@@ -1,0 +1,18 @@
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
+
+JdbcTemplate jdbcTemplate = null;
+NamedParameterJdbcTemplate namedJdbcTemplate = null;
+jdbcTemplate = identifydatabase();
+namedJdbcTemplate = new NamedParamJdbcTemplate(jdbcTemplate);
+Map<String, Objects> params = null;
+
+namedJdbcTemplate.queryMethods{}....
+params = new HashMap<>();
+params.put("namedparms" ,"valueforquery");
+
+
+
+
+
