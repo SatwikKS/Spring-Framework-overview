@@ -6,8 +6,16 @@ DataOutputStream outToServer = null;
 try{
 clientSocket = new Socket(ip, port);
 outToServer = new DataOutputStream(clientSocket.getOutputStream());
+//for multiple records
+for(datatype data:datalist){
+outToServer.writeBytes(data);
+outToServer.flush();
+}
+// for single line
 outToServer.writeBytes(zpl);
 outToServer.flush();
+
+
 outToServer.close();
 }finally{
 outToServer = null;
