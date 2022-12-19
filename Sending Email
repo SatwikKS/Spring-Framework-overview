@@ -1,0 +1,77 @@
+Create EmailDto Object:
+------------------------
+
+private String emailFrom;
+private String[] receipents;
+private String[] recipientsinCC;
+private String[] recipientsinBCC;
+private String MessageHDr;
+private String Message;
+private String attachmentPath;
+private String attachmentName;
+
+
+
+use String Builder to create the complete message Body.
+
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
+
+
+@Autowired 
+private JavaMailSender mailSender;
+
+public String sendEmail(EmailDto emailDto){
+String status =null;
+try{
+MimeMessage message = mailSender.createMimeMessage();
+MimeMessageHelper helper = new MimeMessagehelper(message, true);
+helper.setFrom("from address");
+helper.setTo("ToAddress");
+helper.setSubject("from stringbuilder dto");
+helper.setText("from dto class");
+if (dto.cc is not null){
+helper.setCc("from dto class");
+}
+if (dto.bcc is not null){
+helper.setBcc("from dto class");
+}
+FileSystemResouce file = new FileSystemResource(new File(dto object path value));
+helper.addAttachment(dto.attachmentname, file)
+mailsender.send(message);
+status = "success"
+
+}catch(Exception ex){
+throw new Exception();
+status ="failed"
+}
+return status;
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+2nd Way of Mail:
+------------------
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
+import org.springframework.mail.SimpleMailMessage;
+
+SimpleMailMessage message = new SimpleMailMessage();
+message.setFrom()
+message.setTo()
+message.setSubject()
+message.setText();
+message.setCc();
+message.setBcc();
+mailsender.send(message);
+status = "success";
+
+
