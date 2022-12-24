@@ -1,0 +1,19 @@
+Spring boot Actuator is usefull in monitoring and managing the Application Health.
+
+In Pom.XMl file we need to use:
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-actuator<artifactId>
+</dependency>
+
+
+in Application.yaml / properties file we need to diable the security for actuator endpoints.
+
+management.security.enabled =false;
+
+if we enable the port , application will run on 2 ports
+
+management.port  = 9090
+
+by default application will run on port 8080 and in management port 9090
